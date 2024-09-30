@@ -1,7 +1,8 @@
 <?php
-    include_once("./database/constants.php");
-    if (isset($_SESSION["userid"])) {
-        session_destroy();
-    }
-    header("location:".DOMAIN."/");
+session_start();
+
+unset($_SESSION["USER_ID"]);
+unset($_SESSION["USER_ROLE"]);
+
+header("Location: login.php");
 ?>
